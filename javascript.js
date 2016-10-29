@@ -54,6 +54,9 @@ angular.module('portalApp')
         } else {
             $scope.buttonName = "Geolocation is not supported by this browser.";
         }
+        $scope.portalHelpers.invokeServerFunction('getBuildingsList').then(function(result){
+        	$scope.buildingsList = result;
+        })
     }
     function showPosition(position){
     	$scope.data = position.coords.latitude + " " + position.coords.longitude;
