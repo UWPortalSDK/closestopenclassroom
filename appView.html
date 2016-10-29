@@ -1,5 +1,7 @@
 <!-- Primary template that will get shown when widget loads -->
 <script type="text/ng-template" id="closestopenclassroomMain.html"> 
+    <button class="center-button" clickable ng-click="findRoom()">{{buttonName}}</button>
+    <div id='data'>{{data}}</div>
 	<div class="item item-text-wrap item-icon-right" ng-repeat="item in items" ng-click="showDetails(item)">
 		<span class="itemName">{{item.title}}</span>
 		<span ng-repeat= "tag in item.tags" class="badge badge-balanced">

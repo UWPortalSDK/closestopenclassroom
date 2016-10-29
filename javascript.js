@@ -44,4 +44,18 @@ angular.module('portalApp')
 		$scope.detailsItem = item;		
 		$scope.portalHelpers.showView('closestopenclassroomDetails.html', 2);
 	}
+    
+    $scope.buttonName = 'Find a room';
+    $scope.data = 'none';
+    $scope.findRoom = function(){
+    	$scope.buttonName = 'Looking for a room';
+        if (navigator.geolocation) {
+        	navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            $scope.buttonName = "Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position){
+    	$scope.data = position.coords.latitude + " " + position.coords.longitude;
+    }
 }]);

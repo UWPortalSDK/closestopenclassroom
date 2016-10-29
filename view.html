@@ -1,5 +1,7 @@
 <!-- Primary template that will get shown when widget loads -->
 <script type="text/ng-template" id="closestopenclassroomMain.html"> 
+    <button class="center-button" clickable ng-click="findRoom()">{{buttonName}}</button>
+    <div id='data'>{{data}}</div>
 	<widget-row ng-repeat="item in items" clickable ng-click="showDetails(item)">
 		<widget-cell fill>
 			<span class="itemName">{{item.title}}</span>
