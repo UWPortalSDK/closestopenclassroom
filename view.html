@@ -1,13 +1,13 @@
 <!-- Primary template that will get shown when widget loads -->
 <script type="text/ng-template" id="closestopenclassroomMain.html"> 
     <button class="center-button" clickable ng-click="findRoom()">{{buttonName}}</button>
-    <div id='data'>{{data}}</div>
+    <div id='data'>{{parkingLots}}</div>
     <div>{{buildingsList}}</div>
-	<widget-row ng-repeat="item in items" clickable ng-click="showDetails(item)">
+	<widget-row ng-repeat="item in parkingLots" clickable ng-click="showDetails(item)">
 		<widget-cell fill>
-			<span class="itemName">{{item.title}}</span>
-			<span ng-repeat= "tag in item.tags" class="label label-success">
-				{{tag}}
+			<span class="itemName">Lot {{item.lot_name}}</span>
+			<span class="label label-success">
+				{{item.capacity - item.current_count}}
 			</span>
 		</widget-cell>
 		<widget-cell>
